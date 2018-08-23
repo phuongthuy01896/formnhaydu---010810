@@ -195,7 +195,6 @@
             this.dgvChiHuyND.Size = new System.Drawing.Size(543, 369);
             this.dgvChiHuyND.TabIndex = 13;
             this.dgvChiHuyND.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiHuyND_CellClick);
-            this.dgvChiHuyND.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiHuyND_CellEnter);
             // 
             // TimKiem
             // 

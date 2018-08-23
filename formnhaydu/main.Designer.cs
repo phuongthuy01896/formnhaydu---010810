@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvDanhSachNhayDu = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,16 +67,11 @@
             this.QLKetQua = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupB = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNhayDu)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupB.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -87,13 +83,14 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(713, 649);
+            this.groupBox1.Size = new System.Drawing.Size(713, 710);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox4.Controls.Add(this.groupBox2);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.dgvDanhSachNhayDu);
             this.groupBox4.Controls.Add(this.label7);
@@ -108,10 +105,20 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 123);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(707, 523);
+            this.groupBox4.Size = new System.Drawing.Size(707, 584);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ĐIỀU KIỆN NHẢY DÙ";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Location = new System.Drawing.Point(3, 226);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(701, 355);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
             // 
             // label8
             // 
@@ -134,10 +141,9 @@
             this.CapBac,
             this.DonVi,
             this.GhiChu});
-            this.dgvDanhSachNhayDu.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvDanhSachNhayDu.Location = new System.Drawing.Point(3, 16);
             this.dgvDanhSachNhayDu.Name = "dgvDanhSachNhayDu";
-            this.dgvDanhSachNhayDu.Size = new System.Drawing.Size(394, 504);
+            this.dgvDanhSachNhayDu.Size = new System.Drawing.Size(394, 204);
             this.dgvDanhSachNhayDu.TabIndex = 0;
             // 
             // STT
@@ -369,25 +375,25 @@
             // tạoMớiToolStripMenuItem
             // 
             this.tạoMớiToolStripMenuItem.Name = "tạoMớiToolStripMenuItem";
-            this.tạoMớiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tạoMớiToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.tạoMớiToolStripMenuItem.Text = "Tạo mới";
             // 
             // mởBàiTậpToolStripMenuItem
             // 
             this.mởBàiTậpToolStripMenuItem.Name = "mởBàiTậpToolStripMenuItem";
-            this.mởBàiTậpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mởBàiTậpToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.mởBàiTậpToolStripMenuItem.Text = "Mở bài tập";
             // 
             // lưuBàiTậpToolStripMenuItem
             // 
             this.lưuBàiTậpToolStripMenuItem.Name = "lưuBàiTậpToolStripMenuItem";
-            this.lưuBàiTậpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lưuBàiTậpToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.lưuBàiTậpToolStripMenuItem.Text = "Lưu bài tập";
             // 
             // TaiKhoan
             // 
             this.TaiKhoan.Name = "TaiKhoan";
-            this.TaiKhoan.Size = new System.Drawing.Size(152, 22);
+            this.TaiKhoan.Size = new System.Drawing.Size(146, 22);
             this.TaiKhoan.Text = "Tạo tài khoản";
             this.TaiKhoan.Click += new System.EventHandler(this.TaiKhoan_click);
             // 
@@ -439,53 +445,21 @@
             // groupB
             // 
             this.groupB.BackColor = System.Drawing.Color.White;
-            this.groupB.Controls.Add(this.groupBox5);
             this.groupB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupB.Location = new System.Drawing.Point(713, 0);
             this.groupB.Margin = new System.Windows.Forms.Padding(0);
             this.groupB.Name = "groupB";
             this.groupB.Padding = new System.Windows.Forms.Padding(0);
-            this.groupB.Size = new System.Drawing.Size(651, 649);
+            this.groupB.Size = new System.Drawing.Size(651, 710);
             this.groupB.TabIndex = 1;
             this.groupB.TabStop = false;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.BackColor = System.Drawing.Color.Snow;
-            this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Controls.Add(this.label1);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox5.Location = new System.Drawing.Point(0, 13);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(651, 52);
-            this.groupBox5.TabIndex = 0;
-            this.groupBox5.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(355, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Mã số NND:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Họ tên:";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1364, 649);
+            this.ClientSize = new System.Drawing.Size(1364, 710);
             this.Controls.Add(this.groupB);
             this.Controls.Add(this.groupBox1);
             this.Name = "Main";
@@ -499,9 +473,6 @@
             this.groupBox3.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupB.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -514,9 +485,6 @@
         private System.Windows.Forms.ToolStripMenuItem QuanLyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupB;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem QLChiHuyNhayDu;
         private System.Windows.Forms.ToolStripMenuItem QLGiaoVienDu;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -548,5 +516,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CapBac;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonVi;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

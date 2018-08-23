@@ -22,6 +22,8 @@ namespace formnhaydu
         int status = 1;
         int row = -1;
         int column = -1;
+        bool testName = true;
+        bool testCMSQ = true;
         DataView view;
         public QLChiHuyNhayDu()
         {
@@ -71,6 +73,7 @@ namespace formnhaydu
             txtCMSQ.Clear();
             txtDonVi.Clear();
             txtGhiChu.Clear();
+            cmbCapBac.Text = "";
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -96,8 +99,8 @@ namespace formnhaydu
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (status == 1) themChiHuyND();
-            else if (status == 2) suaChiHuyND();
+            if (status == 1 && testName && testCMSQ) themChiHuyND();
+            else if (status == 2 && testName && testCMSQ) suaChiHuyND();
             btnLuu.Enabled = false;
             btnHuy.Enabled = false;
             btnXoa.Enabled = false;
@@ -325,11 +328,13 @@ namespace formnhaydu
         {
             if (Regex.IsMatch(txtTenChiHuyND.Text, @"^[a-zA-uZ-ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ- ]+$"))
             {
+                testName = true;
                 erHoTen.SetError(txtTenChiHuyND, "Hợp lệ!");
                 erHoTen.Icon = Properties.Resources.check;
             }
             else
             {
+                testName = false; 
                 erHoTen.SetError(txtTenChiHuyND, "Nhập chữ cái!");
                 erHoTen.Icon = Properties.Resources.error;
             }
@@ -339,19 +344,16 @@ namespace formnhaydu
         {
             if (Regex.IsMatch(txtCMSQ.Text, @"^[a-zA-Z0-9]+$") && txtCMSQ.Text.Length <= 20)
             {
+                testCMSQ = true;
                 erCMSQ.SetError(txtCMSQ, "Hợp lệ!");
                 erCMSQ.Icon = Properties.Resources.check;
             }
             else
             {
+                testCMSQ = false;
                 erCMSQ.SetError(txtCMSQ, "Nhập dưới 20 kí tự, không nhập kí tự đặc biệt");
                 erCMSQ.Icon = Properties.Resources.error;
             }
-        }
-
-        private void dgvChiHuyND_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

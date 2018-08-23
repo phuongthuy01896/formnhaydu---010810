@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Text.RegularExpressions;
 
 namespace formnhaydu
 {
     public partial class DangNhap : Form
     {
         Proceduce pro = new Proceduce();
+        bool taikhoan = true;
+        bool matkhau = true;
         public DangNhap()
         {
             InitializeComponent();
@@ -33,10 +36,7 @@ namespace formnhaydu
             }
             else
             {
-                //MessageBox.Show("Tên tài khoản hoặc mật khẩu không đúng!");
                 label2.Text = "Tên tài khoản hoặc mật khẩu không đúng!";
-                //txtTenTaiKhoan.Clear();
-                //txtMatKhau.Clear();
             }
         }
         //private void btnThoat_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace formnhaydu
 
         private void txtTenTaiKhoan_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode==Keys.Enter)
+            if (e.KeyCode==Keys.Enter && taikhoan && matkhau)
             {
                 ktraTaiKhoan();
             }
@@ -54,7 +54,40 @@ namespace formnhaydu
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            if(taikhoan && matkhau)
             ktraTaiKhoan();
+        }
+
+        private void txtTenTaiKhoan_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(txtTenTaiKhoan.Text, @"^[a-zA-Z0-9]+$"))
+            {
+                erTenDangNhap.SetError(txtTenTaiKhoan, "Hợp lệ!");
+                erTenDangNhap.Icon = Properties.Resources.check;
+                taikhoan = true;
+            }
+            else
+            {
+                erTenDangNhap.SetError(txtTenTaiKhoan, "Không nhập kí tự đặc biệt!");
+                erTenDangNhap.Icon = Properties.Resources.error;
+                taikhoan = false;
+            }
+        }
+
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(txtMatKhau.Text, @"^[a-zA-Z0-9]+$"))
+            {
+                matkhau = true;
+                erMatKhau.SetError(txtMatKhau, "Hợp lệ!");
+                erMatKhau.Icon = Properties.Resources.check;
+            }
+            else
+            {
+                matkhau = false;
+                erMatKhau.SetError(txtMatKhau, "Không nhập kí tự đặc biệt!");
+                erMatKhau.Icon = Properties.Resources.error;
+            }
         }
     }
 }

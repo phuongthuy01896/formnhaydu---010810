@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTenTaiKhoan = new System.Windows.Forms.TextBox();
@@ -39,8 +40,14 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnMain = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.erTenTaiKhoan = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erMatKhau = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erNhapLaiMK = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erTenTaiKhoan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erMatKhau)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erNhapLaiMK)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -66,14 +73,16 @@
             this.txtTenTaiKhoan.Location = new System.Drawing.Point(143, 36);
             this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
             this.txtTenTaiKhoan.Size = new System.Drawing.Size(203, 20);
-            this.txtTenTaiKhoan.TabIndex = 2;
+            this.txtTenTaiKhoan.TabIndex = 1;
+            this.txtTenTaiKhoan.TextChanged += new System.EventHandler(this.txtTenTaiKhoan_TextChanged);
             // 
             // txtMatKhau
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(143, 79);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(203, 20);
-            this.txtMatKhau.TabIndex = 3;
+            this.txtMatKhau.TabIndex = 2;
+            this.txtMatKhau.TextChanged += new System.EventHandler(this.txtMatKhau_TextChanged);
             // 
             // txtNhapLaiMK
             // 
@@ -81,6 +90,7 @@
             this.txtNhapLaiMK.Name = "txtNhapLaiMK";
             this.txtNhapLaiMK.Size = new System.Drawing.Size(203, 20);
             this.txtNhapLaiMK.TabIndex = 3;
+            this.txtNhapLaiMK.TextChanged += new System.EventHandler(this.txtNhapLaiMK_TextChanged);
             // 
             // groupBox3
             // 
@@ -137,7 +147,7 @@
             this.btnHuy.Location = new System.Drawing.Point(141, 8);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(109, 63);
-            this.btnHuy.TabIndex = 1;
+            this.btnHuy.TabIndex = 0;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnHuy.UseVisualStyleBackColor = true;
@@ -154,7 +164,7 @@
             this.btnMain.Location = new System.Drawing.Point(10, 8);
             this.btnMain.Name = "btnMain";
             this.btnMain.Size = new System.Drawing.Size(109, 63);
-            this.btnMain.TabIndex = 2;
+            this.btnMain.TabIndex = 0;
             this.btnMain.Text = "Trang chủ";
             this.btnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMain.UseVisualStyleBackColor = false;
@@ -176,6 +186,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // erTenTaiKhoan
+            // 
+            this.erTenTaiKhoan.ContainerControl = this;
+            // 
+            // erMatKhau
+            // 
+            this.erMatKhau.ContainerControl = this;
+            // 
+            // erNhapLaiMK
+            // 
+            this.erNhapLaiMK.ContainerControl = this;
+            // 
             // TaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,6 +212,9 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.erTenTaiKhoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erMatKhau)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erNhapLaiMK)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,5 +232,8 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnMain;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ErrorProvider erTenTaiKhoan;
+        private System.Windows.Forms.ErrorProvider erMatKhau;
+        private System.Windows.Forms.ErrorProvider erNhapLaiMK;
     }
 }
